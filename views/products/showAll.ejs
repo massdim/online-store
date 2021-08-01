@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Products</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div style="float: right; margin-top: 10px; margin-bottom: 10px">
+        <a href="/products/add"
+          ><button class="btn btn-primary" style="width: 100px">Add</button></a
+        >
+      </div>
+      <div>
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th width="100px">Product Id</th>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Category</th>
+              <th>Brand</th>
+              <th width="140px">Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% products.forEach((product) => { %>
+            <tr>
+              <td><%= "PRID - " + product.id %></td>
+              <td>
+                <div style="width: 70px; height: 70px">
+                  <img
+                    src="<%= product.image %>"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                  />
+                </div>
+              </td>
+              <td><%= product.name %></td>
+              <td><%= product.description %></td>
+              <td><%= product.price %></td>
+              <td><%= product.stock %></td>
+              <td><%= product.category %></td>
+              <td><%= product.brand %></td>
+              <td>
+                <a href="/products/<%= product.id %>/edit"
+                  ><button type="button" class="mx btn btn-warning">
+                    Edit
+                  </button></a
+                >
+                <a href="/products/<%= product.id %>/delete"
+                  ><button type="button" class="mx btn btn-danger">
+                    Delete
+                  </button></a
+                >
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

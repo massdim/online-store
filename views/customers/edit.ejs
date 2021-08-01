@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Customer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      .borderNone {
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Edit Customer</h2>
+      <form
+        class="form-horizontal"
+        method="POST"
+        action="/customers/<%= customer.id %>/update"
+      >
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="email">Fullname:</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter fullname"
+              name="fullName"
+              value="<%= customer.fullName %>"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="email">Email:</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter email"
+              value="<%= customer.email %>"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="email">Address:</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter address"
+              name="address"
+              value="<%= customer.address %>"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="email">Phone:</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter phone"
+              name="phone"
+              value="<%= customer.phone %>"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="control-label col-sm-2" for="email">
+            <a href="/customers/<%= customer.id %>"
+              ><button type="button" class="mx btn btn-primary">Back</button></a
+            >
+          </div>
+          <div class="col-sm-10">
+            <div class="form-control borderNone">
+              <button type="submit" class="mx btn btn-success">Submit</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

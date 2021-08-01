@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>API Documentation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      .color {
+        background-color: #f0f0f0;
+        padding: 3px;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-radius: 7px;
+      }
+
+      .completed {
+        background-color: limegreen;
+        color: #fff;
+        padding: 3px;
+        padding-left: 7px;
+        padding-right: 7px;
+        border-radius: 7px;
+      }
+
+      .cancelled {
+        background-color: red;
+        color: #fff;
+        padding: 3px;
+        padding-left: 7px;
+        padding-right: 7px;
+        border-radius: 7px;
+      }
+
+      .fs {
+        font-size: 17px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="">
+      <table class="table table-striped table-bordered fs" style="width: 50%">
+        <thead>
+          <tr>
+            <th width="70px">Method</th>
+            <th width="270px">Route</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GET</td>
+            <td>/</td>
+            <td>
+              Menampilkan halaman utama berisi menu
+              <span class="color">Customer</span>
+              <span class="color">Product</span>
+              <span class="color">Transaction</span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3"></td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/customers</td>
+            <td>
+              Menampilkan seluruh
+              <span class="color">Customer</span>
+            </td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/customers/:id</td>
+            <td>
+              Menampilkan 1
+              <span class="color">Customer</span>
+            </td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/customers/add</td>
+            <td>
+              Menampilkan form add
+              <span class="color">Customer</span>
+            </td>
+          </tr>
+          <tr>
+            <td>POST</td>
+            <td>/customers/add</td>
+            <td>Menambahkan data <span class="color">Customer</span></td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/customers/:id/edit</td>
+            <td>Menampilkan form edit <span class="color">Customer</span></td>
+          </tr>
+          <tr>
+            <td>POST</td>
+            <td>/customers/:id/update</td>
+            <td>Mengubah data <span class="color">Customer</span></td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/customers/:id/show-cart</td>
+            <td>Menampilkan keranjang <span class="color">Customer</span></td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/customers/:id/show-transactions</td>
+            <td>
+              Menampilkan seluruh transaksi <span class="color">Customer</span>
+            </td>
+          </tr>
+          <tr>
+            <td>POST</td>
+            <td>/customers/:id/payment-confirmation-form</td>
+            <td>Menampilkan form konfirmasi pembayaran</td>
+          </tr>
+          <tr>
+            <td>POST</td>
+            <td>/customers/:id/pay-transaction</td>
+            <td>
+              Mengirimkan bukti pembayaran dan mengubah status transaksi menjadi
+              "paid"
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3"></td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/products</td>
+            <td>
+              Menampilkan seluruh
+              <span class="color">Product</span>
+            </td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/products/add</td>
+            <td>
+              Menampilkan form add
+              <span class="color">Product</span>
+            </td>
+          </tr>
+          <tr>
+            <td>POST</td>
+            <td>/products/add</td>
+            <td>
+              Menambahkan data
+              <span class="color">Product</span>
+            </td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/products/:id/edit</td>
+            <td>
+              Menampilkan form edit
+              <span class="color">Product</span>
+            </td>
+          </tr>
+          <tr>
+            <td>POST</td>
+            <td>/products/:id/edit</td>
+            <td>
+              Mengubah data
+              <span class="color">Product</span>
+            </td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/products/:id/delete</td>
+            <td>
+              Menghapus data
+              <span class="color">Product</span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3"></td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/carts/add</td>
+            <td>
+              Menampilkan form add
+              <span class="color">Cart</span>
+            </td>
+          </tr>
+          <tr>
+            <td>POST</td>
+            <td>/carts/add</td>
+            <td>Menambahkan produk kedalam keranjang</td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/carts/:id/delete</td>
+            <td>Menghapus keranjang</td>
+          </tr>
+          <tr>
+            <td colspan="3"></td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/transactions</td>
+            <td>
+              Menampilkan seluruh data
+              <span class="color">Transaction</span>
+            </td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/transactions/:id</td>
+            <td>
+              Menampilkan detail dari
+              <span class="color">Transaction</span>
+            </td>
+          </tr>
+          <tr>
+            <td>POST</td>
+            <td>/transactions/add</td>
+            <td>
+              Menambahkan data
+              <span class="color">Transaction</span>
+            </td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/transactions/:id/payment-confirmation/accepted</td>
+            <td>Mengubah status transaksi menjadi "accepted"</td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/transactions/:id/payment-confirmation/cancelled</td>
+            <td>Mengubah status transaksi menjadi "cancelled"</td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/transactions/:status</td>
+            <td>
+              Menampilkan seluruh data
+              <span class="color">Transaction</span> berdasarkan status
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
