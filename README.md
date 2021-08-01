@@ -528,6 +528,8 @@ RESTFul Endpoints
     }
     ```
 
+---
+
 ### GET /carts
 
 | Method | Route             | Description         |
@@ -592,6 +594,8 @@ RESTFul Endpoints
         message: <internal_memory_error>
     }
     ```
+
+---
 
 ### GET /transactions
 
@@ -792,6 +796,40 @@ RESTFul Endpoints
       },
       ...
     ]
+    ```
+
+  - Failure (500) :
+
+    ```json
+    {
+        message: <internal_memory_error>
+    }
+    ```
+
+### POST /transactions
+
+| Method | Route      | Description        |
+| ------ | ---------- | ------------------ |
+| POST   | /transactions/add | Menambah transaksi |
+
+- Request
+
+  - Request Header : none
+  - Request Body :
+    ```json
+    {
+      "CustomerId": 1
+    }
+    ```
+
+- Response
+
+  - Created (201)
+
+    ```json
+    {
+      "message": "Transaction added successfully."
+    }
     ```
 
   - Failure (500) :
